@@ -12,6 +12,6 @@ export const deletePatient = () => {
     
 }
 
-export const getPatient = () => {
+export const getPatients = () => {
     
 }

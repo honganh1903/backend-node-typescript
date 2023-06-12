@@ -1,6 +1,7 @@
 import express, { NextFunction, Request, Response } from "express";
 import cors from "cors";
 import dotenv from "dotenv";
+import { appointmentRoute, diagnosisRoute, patientRoute, userRoute } from "./routes";
 
 const app = express();
 
@@ -9,7 +10,12 @@ app.use(cors());
 app.use(express.json());
 
 const PORT = process.env.PORT || 5000;
-const DB = process.env.DB;
+
+app.use('/api/diagnosis', diagnosisRoute)
+app.use('/api/patients', patientRoute)
+app.use('/api/users', userRoute)
+app.use('/api/appointments', appointmentRoute)
+
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);

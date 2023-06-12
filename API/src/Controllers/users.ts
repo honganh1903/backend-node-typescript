@@ -8,7 +8,7 @@ export const signIn = () => {
     
 }
 
-export const getusers = () => {
+export const getUsers = () => {
     
 }
 
